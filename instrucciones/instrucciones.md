@@ -1,7 +1,7 @@
 ### CRM EMPLEADOS
 
-      1 - Crear un interface para empleado y para departamento ✅
-              - Empleado ✅
+      1 - Crear un interface para empleado y para departamento 
+              - Empleado 
                     id:number
                     name: string
                     surname: string
@@ -11,24 +11,24 @@
                     department: string
                     status: boolean
 
-              - Deparmento: ✅
+              - Deparmento: 
                     id: number
                     title: string;
                     numEmployees:number
 
-    2 - Crear dos servicios, uno para empleados y otro para departamentos ✅ y vamos a crear un array datos para departamentos y para empleado 
+    2 - Crear dos servicios, uno para empleados y otro para departamentos y vamos a crear un array datos para departamentos y para empleado 
             Departamentos: Marketing, Direccion, Cuentas y Desarrollo
             Empleado: dos empleados uno Marketing y otro den Desarrollo los dos activos.
 
 
-    3 - ¿ Que rutas necesito ?  ✅
+    3 - ¿ Que rutas necesito ?  
 
           1 - /home
           2 - /employees
           3 - /new-employee
           4 - /employee/:idemployee
 
-    4 - ¿ Cuantos componentes necesito ?  ✅
+    4 - ¿ Cuantos componentes necesito ?  
 
          1 - Home
          2 - EmployeesList
