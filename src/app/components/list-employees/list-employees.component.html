@@ -6,11 +6,10 @@
                 <h1 class="name">{{employee.name}} {{employee.surname}}</h1>
             </div>
             <div class="buttons">
-                <button class="btn btn-success" *ngIf="isActive" (click)="changeActive()">Active</button>
-                <button class="btn btn-danger" *ngIf="!isActive" (click)="changeActive()">Innactive</button>
+                <button class="btn btn-success" *ngIf="isActive" (click)="changeActive($event)" value="active">Active</button>
+                <button class="btn btn-danger" *ngIf="!isActive" (click)="changeActive($event)" value="Inactive">Innactive</button>
                 <button class="btn btn-secondary">Detalles</button>
             </div>
         </li>
     </ul>
-    
 </div>

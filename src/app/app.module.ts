@@ -10,6 +10,7 @@ import { FormComponent } from './components/form/form.component';
 import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { CardEmployeesComponent } from './components/card-employees/card-employees.component';
+import { E404Component } from './components/e404/e404.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CardEmployeesComponent } from './components/card-employees/card-employe
     ViewEmployeesComponent,
     ListEmployeesComponent,
     CardEmployeesComponent,
+    E404Component,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Employee } from 'src/app/interfaces/employee.interface';
 import { EmployeesService } from 'src/app/services/employees.service';
 
@@ -11,10 +12,11 @@ export class ListEmployeesComponent implements OnInit {
 
   myEmployees: Employee[] | any
 
-  isActive: boolean = true
+  isActive: boolean = false
 
   constructor
   (
+    private activatedRoute: ActivatedRoute,
     private employeeService: EmployeesService
   ) { }
 
@@ -22,11 +24,15 @@ export class ListEmployeesComponent implements OnInit {
     this.myEmployees = this.employeeService.getAllEmployees()
   }
 
-  changeActive() {
-    if(this.isActive.valueOf() === true){
-      return this.isActive = false
+  employee: Employee | any
+  changeActive($event: any) {
+    if ($event.target.value == "Inactive"){
+      this.isActive = true
     } else {
-      return this.isActive = true
+      this.isActive = false
     }
+    console.log($event.target.value)
   }  
+
+  //cambiar a componente view-employees
 }
