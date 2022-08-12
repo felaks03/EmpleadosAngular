@@ -1,6 +1,6 @@
 import { Department } from "../interfaces/department.interface";
 
-const DEPARTMENTS: Department[] = [
+export const DEPARTMENTS: Department[] = [
     {
         id: 1,
         title: "Marketing",

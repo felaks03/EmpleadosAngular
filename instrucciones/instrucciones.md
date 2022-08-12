@@ -38,7 +38,7 @@
          6 - Footer
          7 - EmployeeCard
 
-    5 - Crear una maquetación responsive con bootstrap, colocar los componentes trasversales. Y hacer funcionar la navegacion del menu. ✅
+    5 - Crear una maquetación responsive con bootstrap, colocar los componentes trasversales. Y hacer funcionar la navegacion del menu. 
 
     6 - En el componente EmployeeList hacer una peticion al servicio y traerse los empleados. ✅
 

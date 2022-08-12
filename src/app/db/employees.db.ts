@@ -1,6 +1,6 @@
 import { Employee } from "../interfaces/employee.interface";
 
-const EMPLOYEES: Employee[] = [
+export const EMPLOYEES: Employee[] = [
     {
         id: 1,
         name: "Juan",
