@@ -10,6 +10,7 @@ import { ViewEmployeesComponent } from './components/view-employees/view-employe
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { CardEmployeesComponent } from './components/card-employees/card-employees.component';
 import { E404Component } from './components/e404/e404.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { E404Component } from './components/e404/e404.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

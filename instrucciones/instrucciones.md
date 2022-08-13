@@ -44,4 +44,4 @@
 
     7 - pintar los empleados , colocando un borde de color verde y un boton de color verde con el texto activo a cada empleado que este activo y border rojo, boton rojo texto inactivo a los que no esten activos.  
 
-    8 - Pintar el empleado en la vista de Empleado, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el empleado. ✅
+    8 - Pintar el empleado en la vista de Empleado, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el empleado. 
