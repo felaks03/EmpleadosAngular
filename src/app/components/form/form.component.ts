@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Department } from 'src/app/interfaces/department.interface';
+import { DepartmentService } from 'src/app/services/department.service';
 import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
@@ -10,9 +12,12 @@ import { EmployeesService } from 'src/app/services/employees.service';
 export class FormComponent implements OnInit {
 
   formModel: FormGroup
+
+  myDepartments!: Department[]
   constructor
   (
-    private employeesService: EmployeesService
+    private employeesService: EmployeesService,
+    private departmentService: DepartmentService
   ) {
     this.formModel = new FormGroup({
       name: new FormControl('', [
@@ -38,6 +43,7 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.myDepartments = this.departmentService.getAllDepartments()
   }
 
   getData() {
@@ -71,4 +77,6 @@ export class FormComponent implements OnInit {
   checkControl(_get: string, _error: string) {
     return this.formModel.get(_get)?.hasError(_error) && this.formModel.get(_get)?.touched
   }
+
+  
 }

@@ -9,10 +9,7 @@ import { Employee } from '../interfaces/employee.interface';
 export class EmployeesService {
 
   arrEmployes: Employee[] = []
-  constructor
-  (
-    private activatedRoute: ActivatedRoute
-  ) {
+  constructor() {
     this.arrEmployes = EMPLOYEES
     
   }
