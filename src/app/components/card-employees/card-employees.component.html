@@ -1,1 +1,13 @@
-<p>card-employees works!</p>
+<div class="d-flex">
+    <li class="card" *ngFor="let employee of myEmployees">
+        <div class="padding-x">
+            <img src="https://th.bing.com/th/id/OIP.S171c9HYsokHyCPs9brbPwHaGP?pid=ImgDet&rs=1" class="profile-p" alt="">
+            <h1 class="name">{{employee.name}} {{employee.surname}}</h1>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-success" value={{employee.id}} *ngIf="employee.status" (click)="changeActive($event)">Active</button>
+            <button class="btn btn-danger" value={{employee.id}} *ngIf="!employee.status" (click)="changeActive($event)">Inactive</button>
+            <button class="btn btn-secondary" [routerLink]="['/employee', employee.id]">Detalles</button>
+        </div>
+    </li>
+</div>

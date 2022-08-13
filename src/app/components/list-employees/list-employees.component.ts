@@ -16,23 +16,10 @@ export class ListEmployeesComponent implements OnInit {
 
   constructor
   (
-    private activatedRoute: ActivatedRoute,
     private employeeService: EmployeesService
   ) { }
 
   ngOnInit(): void {
     this.myEmployees = this.employeeService.getAllEmployees()
   }
-
-  employee: Employee | any
-  changeActive($event: any) {
-    if ($event.target.value == "Inactive"){
-      this.isActive = true
-    } else {
-      this.isActive = false
-    }
-    console.log($event.target.value)
-  }  
-
-  //cambiar a componente view-employees
 }

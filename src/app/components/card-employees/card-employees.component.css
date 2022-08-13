@@ -1,0 +1,41 @@
+.profile-p {
+    width: 226px;
+    height: 226px;
+    border-radius: 50%;
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    padding-top: 1.5rem;
+    margin: 2rem;
+}
+
+.name {
+    padding-top: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.padding-x {
+    padding: 0 87px 0 87px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.btn {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+
+}
+.btn-success{
+    border: green solid 3px;
+}
+.btn-danger {
+    border: red solid 3px;
+}

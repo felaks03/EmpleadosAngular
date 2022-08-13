@@ -14,6 +14,7 @@ export class EmployeesService {
     private activatedRoute: ActivatedRoute
   ) {
     this.arrEmployes = EMPLOYEES
+    
   }
 
   getAllEmployees(): Employee[] {
@@ -21,6 +22,8 @@ export class EmployeesService {
   }
 
   getById(_id: number): Employee | any {
-    return this.arrEmployes.find(employee => employee.id === _id)
+    return this.arrEmployes.find(employee => employee.id == _id)
   }
+
+  
 }

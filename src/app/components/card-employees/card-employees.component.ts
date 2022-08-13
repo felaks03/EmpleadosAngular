@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/interfaces/employee.interface';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-card-employees',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardEmployeesComponent implements OnInit {
 
-  constructor() { }
+  myEmployees: Employee[] = []
+  constructor
+  (
+    private employeesService: EmployeesService
+  ) { 
+    this.myEmployees = employeesService.arrEmployes
+  }
 
   ngOnInit(): void {
+  }
+  changedEmployee: Employee | any
+
+  statusActive: string = "Active"
+
+  changeActive($event: any) {
+    let id: number = $event.target.value
+    this.changedEmployee = this.employeesService.getById(id)
+    if (this.changedEmployee.status == true){
+      this.changedEmployee.status = false
+    } else {
+      this.changedEmployee.status = true
+    }
   }
 
 }
