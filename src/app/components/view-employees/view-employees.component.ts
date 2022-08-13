@@ -31,4 +31,16 @@ export class ViewEmployeesComponent implements OnInit {
     })
   }
 
+  changedEmployee: Employee | any
+
+  changeInActive($event: any) {
+    let id: number = $event.target.value
+    this.changedEmployee = this.employeesService.getById(id)
+    if (this.changedEmployee.status == true){
+      this.changedEmployee.status = false
+    } else {
+      this.changedEmployee.status = true
+    }
+  }
+
 }

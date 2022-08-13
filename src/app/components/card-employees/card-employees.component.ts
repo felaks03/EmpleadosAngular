@@ -21,8 +21,6 @@ export class CardEmployeesComponent implements OnInit {
   }
   changedEmployee: Employee | any
 
-  statusActive: string = "Active"
-
   changeActive($event: any) {
     let id: number = $event.target.value
     this.changedEmployee = this.employeesService.getById(id)

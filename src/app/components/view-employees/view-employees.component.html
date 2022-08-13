@@ -1,1 +1,26 @@
-<img src="{{myEmployee.photo}}" alt="">
+<div class="m-5 d-flex">
+    <img src="{{myEmployee.photo}}" alt="">
+    <ul class="list-group mx-5">
+        <li class="list-group-item">
+            <p>Name: {{myEmployee.name}} {{myEmployee.surname}}</p>
+        </li>
+        <li class="list-group-item">
+            <p>Email: {{myEmployee.email}}</p>
+        </li>
+        <li class="list-group-item">
+            <p>DNI: {{myEmployee.dni}}
+            </p>
+        </li>
+        <li class="list-group-item">
+            <p>Department: {{myEmployee.department}}</p>
+        </li>
+        <button class="btn btn-success" value={{myEmployee.id}} *ngIf="myEmployee.status"
+            (click)="changeInActive($event)">Active</button>
+        <button class="btn btn-danger" value={{myEmployee.id}} *ngIf="!myEmployee.status"
+            (click)="changeInActive($event)">Inactive</button>
+    </ul>
+</div>
+<div class="d-flex list-btn">
+    <button class="list-btn btn btn-secondary" [routerLink]="'/employees'">Volver al Listado</button>
+</div>
+

@@ -1,0 +1,17 @@
+.list-group-item{
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    line-height: center;
+}
+p{
+    margin: 0;
+}
+.btn {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.list-btn{
+    justify-content: end;
+    margin: 7rem 2rem 0 0;
+}
