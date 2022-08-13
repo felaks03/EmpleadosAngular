@@ -1,29 +1,32 @@
 <form class="container m-5" [formGroup]="formModel" (ngSubmit)="getData()">
-    <div class="form-group py-3">
+    <div class="borderc form-group py-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" id="name" class="form-control" placeholder="Write your name" formControlName="name">
         <p *ngIf="checkControl('name', 'required')" class="error">Campo Requerido</p>
         <p *ngIf="checkControl('name', 'minlength')" class="error">El nombre es demasiado corto</p>
     </div>
-    <div class="form-group py-3">
+    <div class="borderc form-group py-3">
         <label for="surname" class="form-label">Surname</label>
         <input type="text" id="surname" class="form-control" placeholder="Write your surname" formControlName="surname">
         <p *ngIf="checkControl('surname', 'required')" class="error">Campo Requerido</p>
+        <p *ngIf="checkControl('surname', 'minlength')" class="error">El nombre es demasiado corto</p>
     </div>
-    <div class="form-group py-3">
+    <div class="borderc form-group py-3">
         <label for="email" class="form-label">Email</label>
         <input type="text" id="email" class="form-control" placeholder="Write your email" formControlName="email">
         <p *ngIf="checkControl('email', 'required')" class="error">Campo Requerido</p>
+        <p *ngIf="checkControl('email', 'pattern')" class="error">El correo no el válido</p>
     </div>
-    <div class="form-group py-3">
+    <div class="borderc form-group py-3">
         <label for="dni" class="form-label">Dni</label>
         <input type="text" id="dni" class="form-control" placeholder="Write your dni" formControlName="dni">
         <p *ngIf="checkControl('dni', 'required')" class="error">Campo Requerido</p>
+        <p class="error" *ngIf="checkControl('dni', 'dnivalidator')">El DNI no es válido</p>
     </div>
     <div class="py-3 fontsize">
         <label for="department" class="form-label">Department</label>
-        <div class="form-group">
-            <select name="department" id="department" class="form-control" aria-placeholder="Click to select a department">
+        <div class="borderc form-group">
+            <select name="department" id="department" class="form-control" aria-placeholder="Click to select a department" formControlName="department">
                 <option value="" disabled selected>Select a department</option>
                 <option value="Marketing">Marketing</option>
                 <option value="Direccion">Direccion</option>
@@ -31,10 +34,11 @@
                 <option value="Desarrollo">Desarrollo</option>
             </select>
         </div> 
-        <p *ngIf="checkControl('department', 'required')" class="error">Campo Requerido</p>
+        <p *ngIf="formModel.get('department')?.invalid && formModel.get('department')?.touched" class="error">Campo Requerido</p>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="formModel.invalid">Guardar</button>
-    <button type="button" class="btn btn-danger">Test</button>
+    <div class="d-flex btnflex">
+        <button type="submit" class="btn btn-primary" [disabled]="formModel.invalid">Guardar</button>
+    </div>
 </form>
 
 

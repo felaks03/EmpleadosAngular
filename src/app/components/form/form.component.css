@@ -4,6 +4,7 @@
 .form-group, .fontsize{
     font-size: 1.2rem;
     padding-bottom: 0;
+
 }
 .form-label{
     margin-bottom: 0.5rem;
@@ -14,4 +15,22 @@
     font-size: 0.8rem;
     padding-top: 0.5rem;
     margin-bottom: 0;
+}
+.form-control{
+    width: 800px;
+}
+
+.borderc .ng-valid{
+    border-bottom: solid lawngreen 3px;
+}
+div .ng-invalid.ng-touched{
+    border-bottom: solid tomato 3px;
+}
+.btnflex{
+    justify-content: end;
+    margin-top: 5rem;    
+}
+.btn{
+    padding: 0.75rem 1.5rem;
+    font-size: 1.6rem;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-form',
@@ -9,20 +10,26 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 export class FormComponent implements OnInit {
 
   formModel: FormGroup
-  constructor() {
+  constructor
+  (
+    private employeesService: EmployeesService
+  ) {
     this.formModel = new FormGroup({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(3)
       ]),
       surname: new FormControl('', [
-        Validators.required
+        Validators.required,
+        Validators.minLength(3)
       ]),
       email: new FormControl('', [
-        Validators.required
+        Validators.required,
+        Validators.pattern(/^\S+\@\S+\.[com, es]/)
       ]),
       dni: new FormControl('', [
-        Validators.required
+        Validators.required,
+        this.dnivalidator
       ]),
       department: new FormControl('', [
         Validators.required
@@ -35,9 +42,29 @@ export class FormComponent implements OnInit {
 
   getData() {
     if(this.formModel.valid){
-      console.log(this.formModel.value)
+      this.employeesService.getAllEmployees().push(this.formModel.value)
     } else{
       console.log("El formulario no es válido")
+    }
+  }
+
+  dnivalidator(_dni: AbstractControl): any {
+    let arrLetras: string[] = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"]
+    
+    let dni = _dni.value
+    let dniSplit = dni.split("")
+
+    let dniNumber = 0
+    for(let i = 0; i < 8; i++) {
+      dniNumber += dniSplit[i]
+    }
+    console.log(dniNumber)
+    
+
+    if(dniSplit[8] == arrLetras[Number(dniNumber) % 23]) {
+      return null
+    } else {
+      return {'dnivalidator': true}
     }
   }
 
