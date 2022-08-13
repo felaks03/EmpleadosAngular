@@ -31,4 +31,11 @@ export class CardEmployeesComponent implements OnInit {
     }
   }
 
+  duplicatedEmployee: Employee | any
+
+  // duplicateEmployee($event: any) {
+  //   let id: number = $event.target.value
+  //   this.duplicatedEmployee = this.employeesService.getById(id)
+  //   this.employeesService.arrEmployes.push(this.duplicatedEmployee)
+  // }
 }

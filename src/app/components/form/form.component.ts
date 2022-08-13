@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
+import { Route, Router } from '@angular/router';
 import { Department } from 'src/app/interfaces/department.interface';
 import { DepartmentService } from 'src/app/services/department.service';
 import { EmployeesService } from 'src/app/services/employees.service';
@@ -17,7 +19,8 @@ export class FormComponent implements OnInit {
   constructor
   (
     private employeesService: EmployeesService,
-    private departmentService: DepartmentService
+    private departmentService: DepartmentService,
+    private router: Router
   ) {
     this.formModel = new FormGroup({
       name: new FormControl('', [
@@ -46,9 +49,21 @@ export class FormComponent implements OnInit {
     this.myDepartments = this.departmentService.getAllDepartments()
   }
 
+  id: number = 3
+  photo: string = "https://www.asofiduciarias.org.co/wp-content/uploads/2018/06/sin-foto.png"
+  department: Department | any
   getData() {
     if(this.formModel.valid){
+      this.formModel.value.id = this.id
+      this.formModel.value.photo = this.photo
+      this.formModel.value.status = true
+      this.id++
       this.employeesService.getAllEmployees().push(this.formModel.value)
+      this.router.navigate(['/employees'])
+
+      this.department = this.departmentService.getById(this.formModel.value.department)
+      this.department.numEmployees++
+      console.log(this.department)
     } else{
       console.log("El formulario no es válido")
     }

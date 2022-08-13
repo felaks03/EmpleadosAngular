@@ -4,7 +4,7 @@ export const DEPARTMENTS: Department[] = [
     {
         id: 1,
         title: "Marketing",
-        numEmployees: 0
+        numEmployees: 1
     },
     {
         id: 2,
@@ -19,6 +19,6 @@ export const DEPARTMENTS: Department[] = [
     {
         id: 4,
         title: "Desarrollo",
-        numEmployees: 0
+        numEmployees: 1
     },
 ]
