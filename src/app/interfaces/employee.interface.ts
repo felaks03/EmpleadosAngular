@@ -5,6 +5,6 @@ export interface Employee {
     dni: string
     email: string
     photo: string;
-    department: string
+    department: number
     status: boolean
 }

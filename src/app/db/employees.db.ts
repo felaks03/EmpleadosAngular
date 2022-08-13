@@ -8,7 +8,7 @@ export const EMPLOYEES: Employee[] = [
         dni: "12345678X",
         email: "jrodriguez@gmail.com",
         photo: "https://www.asofiduciarias.org.co/wp-content/uploads/2018/06/sin-foto.png",
-        department: "Marketing",
+        department: 1,
         status: true
     },
 
@@ -19,7 +19,7 @@ export const EMPLOYEES: Employee[] = [
         dni: "48718449X",
         email: "felixruz@gmail.com",
         photo: "https://www.asofiduciarias.org.co/wp-content/uploads/2018/06/sin-foto.png",
-        department: "Desarrollo",
+        department: 4,
         status: true
     }
 ]

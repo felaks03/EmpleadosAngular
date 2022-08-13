@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Department } from 'src/app/interfaces/department.interface';
 import { Employee } from 'src/app/interfaces/employee.interface';
+import { DepartmentService } from 'src/app/services/department.service';
 import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
@@ -11,10 +13,12 @@ import { EmployeesService } from 'src/app/services/employees.service';
 export class ViewEmployeesComponent implements OnInit {
 
   myEmployee: Employee | any
+  myDepartment: Department | any
   constructor
   (
     private activatedRoute: ActivatedRoute,
-    private employeesService: EmployeesService
+    private employeesService: EmployeesService,
+    private departmentService: DepartmentService
   ) 
   { 
 
@@ -29,6 +33,7 @@ export class ViewEmployeesComponent implements OnInit {
       let id = params.idemployee
       this.myEmployee = this.employeesService.getById(id)
     })
+    this.getDepartment()
   }
 
   changedEmployee: Employee | any
@@ -42,5 +47,10 @@ export class ViewEmployeesComponent implements OnInit {
       this.changedEmployee.status = true
     }
   }
+
+  getDepartment() {
+    this.myDepartment = this.departmentService.getById(this.myEmployee.department)
+  }  
+
 
 }

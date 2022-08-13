@@ -15,4 +15,9 @@ export class DepartmentService {
   getAllDepartments(): Department[] {
     return this.arrDepartments
   }
+
+  myDepartment: Department | any
+  getById(_id: number): Department | any {
+    return this.myDepartment = this.arrDepartments.find(department => department.id == _id)
+  }
 }

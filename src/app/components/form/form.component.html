@@ -28,7 +28,7 @@
         <div class="borderc form-group">
             <select name="department" id="department" class="form-control" aria-placeholder="Click to select a department" formControlName="department">
                 <option value="" disabled selected>Select a department</option>
-                <option *ngFor="let department of myDepartments" value={{department.title}}>{{department.title}}</option>
+                <option *ngFor="let department of myDepartments" value={{department.id}}>{{department.title}}</option>
             </select>
         </div> 
         <p *ngIf="formModel.get('department')?.invalid && formModel.get('department')?.touched" class="error">Campo Requerido</p>
